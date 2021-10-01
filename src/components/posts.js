@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { PostsContext } from "../Context/blogContext";
 import SortedPosts from "./postsFilter";
-
+import CircularProgress from "@mui/material/CircularProgress";
 /**
  * @author
  * @function Posts
@@ -31,7 +31,14 @@ const Posts = (props) => {
         <h2 className={classes.h2}>RECENT ARTICLES</h2>
       </div>
 
-      {loading ? <h1>loadingg...</h1> : <SortedPosts data={Posts.reverse()} />}
+      {loading ? (
+        <div style={{ textAlign: "center", marginTop: "15px" }}>
+          {" "}
+          <CircularProgress size={60} color="inherit" />
+        </div>
+      ) : (
+        <SortedPosts data={Posts.reverse()} />
+      )}
       {error && <h2 style={{ textAlign: "center" }}>{"Network Error"}</h2>}
     </div>
   );
