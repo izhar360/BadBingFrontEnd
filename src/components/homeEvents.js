@@ -80,25 +80,25 @@ const HomeEvents = (props) => {
       icon: "moon",
       h3: " Life Purpose",
       p: "How to find direction in your life and create your calling",
-      delay: "300",
+      delay: "100",
     },
     {
       icon: "chat",
       h3: " True Value",
       p: "discover the true values and create your cookie",
-      delay: "500",
+      delay: "200",
     },
     {
       icon: "team-management",
       h3: "Matters",
       p: "How to find what matters and create your calling",
-      delay: "700",
+      delay: "300",
     },
     {
       icon: "love",
       h3: "Relation",
       p: "Strengthen your relations and create your calling",
-      delay: "900",
+      delay: "400",
     },
   ];
 

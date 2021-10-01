@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Markup } from "interweave";
-import { fetchposts } from "../api";
 
 const useStyles = makeStyles((theme) => ({
   desc: {
@@ -26,17 +25,17 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: "20px",
       marginTop: "30px",
-      width: "90%",
+      width: "80%",
     },
-
-    width: "60%",
     color: "#222",
     fontSize: "26px",
     lineHeight: "1.4",
-    maxWidth: "80%",
     height: "auto",
-    margin: "0 auto",
+    width: "60%",
+    maxWidth: "80%",
     display: "flex",
+    margin: "0 auto",
+    wordWrap: "break-word",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
@@ -69,13 +68,22 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid #ccc",
     padding: "20px",
   },
+
+  undererdList: {
+    width: "100%",
+    padding: "0px",
+    marginTop: "10px",
+  },
+  ordererdList: {
+    width: "100%",
+    padding: "0px",
+    marginTop: "10px",
+  },
 }));
 
 const DesciptionTest = ({ blockContent }) => {
   const classes = useStyles();
-  const [singlePost, setSinglePost] = useState({});
-
-  console.log(blockContent, "lll");
+  // const [singlePost, setSinglePost] = useState({});
 
   return (
     <div className={classes.desc}>
@@ -93,24 +101,6 @@ const DesciptionTest = ({ blockContent }) => {
             }
           } else if (el.type == "paragraph") {
             return <Markup content={el.data.text} />;
-          } else if (el.type == "list") {
-            if (el.data.style === "ordered") {
-              return (
-                <ol>
-                  {el.data.items.map((el) => (
-                    <li>{el}</li>
-                  ))}
-                </ol>
-              );
-            } else if (el.data.style === "unordered") {
-              return (
-                <ul>
-                  {el.data.items.map((el) => (
-                    <li>{el}</li>
-                  ))}
-                </ul>
-              );
-            }
           } else if (el.type == "quote") {
             return (
               <div>
@@ -120,6 +110,24 @@ const DesciptionTest = ({ blockContent }) => {
                 </blockquote>
               </div>
             );
+          } else if (el.type == "list") {
+            if (el.data.style === "ordered") {
+              return (
+                <ol className={classes.ordererdList}>
+                  {el.data.items.map((el) => (
+                    <li style={{ width: "90%", marginTop: "8px" }}>{el}</li>
+                  ))}
+                </ol>
+              );
+            } else if (el.data.style === "unordered") {
+              return (
+                <ul className={classes.undererdList}>
+                  {el.data.items.map((el) => (
+                    <li style={{ width: "90%", marginTop: "8px" }}>{el}</li>
+                  ))}
+                </ul>
+              );
+            }
           } else if (el.type == "image") {
             return <img src={el.data.url} />;
           } else if (el.type == "raw") {

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -19,6 +19,7 @@ import Link from "../Link";
 import { UserContext } from "../Context/userContext.js";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { Button } from "@material-ui/core";
 
 /**
  * @author
@@ -121,6 +122,13 @@ const Header = (props) => {
             classes={{ paper: classes.SwipeableDrawer }}
           >
             <List>
+              {user.email === "jane@jane.com" ? (
+                <ListItem className={classes.ListItem} disableTypography>
+                  <Button variant="outlined" component={Link} href="/dashboard">
+                    New Post
+                  </Button>
+                </ListItem>
+              ) : null}
               <ListItem className={classes.ListItem} disableTypography>
                 {user.token ? <AccountCircleIcon /> : null}
                 <span style={{ marginLeft: "5px" }}>
@@ -160,6 +168,7 @@ const Header = (props) => {
                   )}
                 </span>
               </ListItem>
+
               {routes.map((option, i) => (
                 <ListItem
                   onClick={() => {

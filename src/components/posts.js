@@ -11,7 +11,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 const useStyles = makeStyles((theme) => ({
   postMain: {
     width: "80%",
-    margin: "0px auto",
+    margin: "0 auto",
     textAlign: "center",
   },
   h2: {
