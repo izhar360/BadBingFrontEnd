@@ -114,6 +114,8 @@ const SinglePost = (props) => {
         <Grid
           container
           direction="column"
+          justifyContent="center"
+          alignItems="center"
           style={{
             backgroundImage: singlePost && `url("${singlePost.selectedFile}")`,
           }}

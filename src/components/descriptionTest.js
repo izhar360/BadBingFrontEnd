@@ -19,13 +19,13 @@ const useStyles = makeStyles((theme) => ({
     //   lineHeight: "0.9",
     // },
     [theme.breakpoints.down("md")]: {
-      maxWidth: "74%",
+      width: "74%",
       marginTop: "60px",
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "20px",
       marginTop: "30px",
-      maxWidth: "70%",
+      width: "80%",
     },
     color: "#222",
     fontSize: "26px",
