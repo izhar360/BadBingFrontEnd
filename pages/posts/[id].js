@@ -178,6 +178,7 @@ const SinglePost = (props) => {
         </Grid>
 
         <Grid item width={"80%"}>
+          {" "}
           <DesciptionTest
             blockContent={singlePost && singlePost.blockContent}
           />

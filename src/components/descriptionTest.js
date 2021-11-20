@@ -46,11 +46,11 @@ const useStyles = makeStyles((theme) => ({
       margin: "30px 0px",
 
       [theme.breakpoints.down("sm")]: {
-        width: "500px",
+        width: "100px",
         height: "auto",
       },
       [theme.breakpoints.down("xs")]: {
-        width: "300px",
+        width: "100px",
         height: "auto",
         padding: "5px",
       },
