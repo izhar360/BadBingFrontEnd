@@ -19,13 +19,13 @@ const useStyles = makeStyles((theme) => ({
     //   lineHeight: "0.9",
     // },
     [theme.breakpoints.down("md")]: {
-      width: "74%",
+      maxWidth: "74%",
       marginTop: "60px",
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "20px",
       marginTop: "30px",
-      width: "80%",
+      maxWidth: "70%",
     },
     color: "#222",
     fontSize: "26px",
@@ -46,11 +46,11 @@ const useStyles = makeStyles((theme) => ({
       margin: "30px 0px",
 
       [theme.breakpoints.down("sm")]: {
-        width: "100px",
+        width: "500px",
         height: "auto",
       },
       [theme.breakpoints.down("xs")]: {
-        width: "100px",
+        width: "300px",
         height: "auto",
         padding: "5px",
       },
