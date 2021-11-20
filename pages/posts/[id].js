@@ -114,8 +114,6 @@ const SinglePost = (props) => {
         <Grid
           container
           direction="column"
-          justifyContent="center"
-          alignItems="center"
           style={{
             backgroundImage: singlePost && `url("${singlePost.selectedFile}")`,
           }}
@@ -179,7 +177,7 @@ const SinglePost = (props) => {
           </div>
         </Grid>
 
-        <Grid item width={"80%"}>
+        <Grid item>
           {" "}
           <DesciptionTest
             blockContent={singlePost && singlePost.blockContent}
