@@ -178,9 +178,10 @@ const SinglePost = (props) => {
         </Grid>
 
         <Grid item>
-          <DesciptionTest
+          {/* <DesciptionTest
             blockContent={singlePost && singlePost.blockContent}
-          />
+          /> */}
+          <h2>jsjjsj</h2>
         </Grid>
         <Grid item>{singlePost && <Like id={id} />}</Grid>
         <Grid item>
